@@ -54,6 +54,9 @@ if __name__ == "__main__":
                 data_dir.mkdir(parents=True, exist_ok=True)
                 data_path = data_dir / f"sub{sub.strip()}_sess{sess}_bld002_FDRMS0.2_DVARS50_motion_outliers.txt"
                 with data_path.open(mode="w", encoding="utf-8") as data_file:
+                    # {0,1} vector, where uncensored time points are 0
+                    # We assume that all BSC data is censored
+                    # i.e. without motion artifact/outliers
                     data_file.writelines("\n".join(["1"] * args.bold_time_span))
                 # Generate censor list file
                 censor_list_path = args.censor_dir / f"sub{sub.strip()}_sess{sess}.txt"
