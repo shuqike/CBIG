@@ -8,7 +8,7 @@ import numpy as np
 def get_args():
     args = ArgumentParser()
     args.add_argument(
-        "--bold-time-span", type=int, default=120,
+        "--bold-time-span", type=int, default=490,
         help="The number of time points in the BOLD data"
     )
     args.add_argument(
@@ -48,9 +48,9 @@ if __name__ == "__main__":
     with args.sub_list_file.open(mode="r", encoding="utf-8") as sub_list_file:
         sub_list = sub_list_file.readlines()
         for sub in sub_list:
-            for sess in [1, 2, 3]:
+            for sess in [1]:
                 # Generate dummy censor data
-                data_dir = Path(f"/home/pbfs18/Documents/shuqi_code/data_bases/BSC_DeepPrep_2317/{sub.strip()}/ses-01/qc")
+                data_dir = Path(f"/home/pbfs18/Documents/shuqi_code/chef-parcellation/data/BNU/{sub.strip()}/preprocess/{sub.strip()}/qc")
                 data_dir.mkdir(parents=True, exist_ok=True)
                 data_path = data_dir / f"sub{sub.strip()}_sess{sess}_bld002_FDRMS0.2_DVARS50_motion_outliers.txt"
                 with data_path.open(mode="w", encoding="utf-8") as data_file:
