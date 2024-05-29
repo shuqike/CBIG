@@ -1,0 +1,11 @@
+% open Matlab command line
+addpath(genpath('/home/pbfs18/Documents/shuqi_code/CBIG'));
+project_dir='/home/pbfs18/Documents/shuqi_code/data_bases/bsc_numbered_output/generate_profiles_and_ini_params';
+seed_mesh='fsaverage3';
+targ_mesh='fsaverage5';
+num_clusters='17';
+num_initialization='10000';
+num_iter='1000';
+start_sess='1';
+end_sess='2';
+CBIG_shuqi_MSHBM_generate_ini_params(seed_mesh, targ_mesh, num_clusters, num_initialization, num_iter, project_dir, start_sess, end_sess);

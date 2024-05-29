@@ -1,0 +1,9 @@
+% open Matlab command line
+addpath(genpath('/home/pbfs18/Documents/shuqi_code/CBIG'));
+project_dir='/home/pbfs18/Documents/shuqi_code/data_bases/bsc_numbered_output/generate_profiles_and_ini_params';
+for i = 1:30
+    sub_list{i}=num2str(i);
+end
+start_sess='1';
+end_sess='2';
+CBIG_shuqi_MSHBM_avg_profiles('fsaverage3','fsaverage5',project_dir,sub_list,start_sess,end_sess);
