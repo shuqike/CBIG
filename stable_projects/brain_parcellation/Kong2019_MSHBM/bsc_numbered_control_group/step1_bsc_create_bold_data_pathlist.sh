@@ -22,39 +22,20 @@ mkdir -p $out_dir/generate_individual_parcellations
 mkdir -p $out_dir/generate_profiles_and_ini_params/data_list/fMRI_list
 mkdir -p $out_dir/generate_profiles_and_ini_params/data_list/censor_list
 
-for run in {1,2,3,4,5}; do
+for run in {3,4}; do
     i=0
     while read sub; do
         # variable increment
         ((i++))
+        # fake run id
+        fake_id=$(($run - 2))
         # fMRI data
         lh_fmri="/home/pbfs18/Documents/shuqi_code/data_bases/BSC_DeepPrep_2317/${sub}/ses-01/func/${sub}_ses-01_task-rest_run-0${run}_hemi-L_space-fsaverage5_desc-postproc_bold.nii.gz"
 
-        echo $lh_fmri >> $out_dir/generate_profiles_and_ini_params/data_list/fMRI_list/lh_sub${i}_sess${run}.txt
+        echo $lh_fmri >> $out_dir/generate_profiles_and_ini_params/data_list/fMRI_list/lh_sub${i}_sess${fake_id}.txt
 
         rh_fmri="/home/pbfs18/Documents/shuqi_code/data_bases/BSC_DeepPrep_2317/${sub}/ses-01/func/${sub}_ses-01_task-rest_run-0${run}_hemi-R_space-fsaverage5_desc-postproc_bold.nii.gz"
 
-        echo $rh_fmri >> $out_dir/generate_profiles_and_ini_params/data_list/fMRI_list/rh_sub${i}_sess${run}.txt
-    done < /home/pbfs18/Documents/shuqi_code/data_bases/BSC_DeepPrep_2317/sub_list.txt
-done
-
-# ##############################
-# # Create validation fMRI lists 
-# ##############################
-mkdir -p $out_dir/generate_individual_parcellations/data_list/validation_fMRI_list
-
-for run in {1,2,3,4,5}; do
-    i=0
-    while read sub; do
-        # variable increment
-        ((i++))
-        # fMRI data
-        lh_fmri="/home/pbfs18/Documents/shuqi_code/data_bases/BSC_DeepPrep_2317/${sub}/ses-01/func/${sub}_ses-01_task-rest_run-0${run}_hemi-L_space-fsaverage5_desc-postproc_bold.nii.gz"
-
-        echo $lh_fmri >> $out_dir/generate_individual_parcellations/data_list/validation_fMRI_list/lh_sub${i}.txt
-
-        rh_fmri="/home/pbfs18/Documents/shuqi_code/data_bases/BSC_DeepPrep_2317/${sub}/ses-01/func/${sub}_ses-01_task-rest_run-0${run}_hemi-R_space-fsaverage5_desc-postproc_bold.nii.gz"
-
-        echo $rh_fmri >> $out_dir/generate_individual_parcellations/data_list/validation_fMRI_list/rh_sub${i}.txt
+        echo $rh_fmri >> $out_dir/generate_profiles_and_ini_params/data_list/fMRI_list/rh_sub${i}_sess${fake_id}.txt
     done < /home/pbfs18/Documents/shuqi_code/data_bases/BSC_DeepPrep_2317/sub_list.txt
 done

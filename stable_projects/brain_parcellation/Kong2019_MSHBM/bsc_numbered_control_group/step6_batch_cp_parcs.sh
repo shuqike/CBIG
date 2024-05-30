@@ -1,0 +1,3 @@
+for sub in {3..30}; do
+    python step6_cp_parcs.py --parc1 /home/pbfs18/Documents/shuqi_code/data_bases/bsc_numbered_output_GSP_parc/generate_individual_parcellations/ind_parcellation/test_set/Ind_parcellation_MSHBM_sub${sub}_w100_MRF30.mat --parc2 /home/pbfs18/Documents/shuqi_code/data_bases/bsc_numbered_output_GSP_parc_control_group/generate_individual_parcellations/ind_parcellation/test_set/Ind_parcellation_MSHBM_sub${sub}_w100_MRF30.mat
+done

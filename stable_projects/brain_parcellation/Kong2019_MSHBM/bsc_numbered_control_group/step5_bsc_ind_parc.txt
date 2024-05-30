@@ -1,0 +1,11 @@
+% open Matlab command line right in CBIG folder
+% They pick subject data by aligning sub_id and the line id in ?h_sess?.txt. So even if you use sub 1 2 as validation data, you need to include them in the profile list
+project_dir='/home/pbfs18/Documents/shuqi_code/data_bases/bsc_numbered_output_GSP_parc_control_group/generate_individual_parcellations';
+targ_mesh='fsaverage5';
+num_clusters='17';
+num_sess='2';
+w='100';
+c='30';
+for sub_id = 3:30
+    [lh_labels{sub_id-2}, rh_labels{sub_id-2}] = CBIG_MSHBM_generate_individual_parcellation(project_dir,targ_mesh,num_sess,num_clusters,num2str(sub_id),w,c);
+end

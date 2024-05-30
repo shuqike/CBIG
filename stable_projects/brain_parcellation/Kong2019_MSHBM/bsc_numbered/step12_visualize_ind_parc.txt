@@ -1,0 +1,3 @@
+group = load(fullfile(getenv('CBIG_CODE_DIR'),'/home/pbfs18/Documents/shuqi_code/data_bases/bsc_numbered_output_GSP_parc/estimate_group_priors/group/group.mat'));
+
+CBIG_DrawSurfaceMaps(lh_labels1,rh_labels1, 'fsaverage5', 'inflated',0,17,group.colors);

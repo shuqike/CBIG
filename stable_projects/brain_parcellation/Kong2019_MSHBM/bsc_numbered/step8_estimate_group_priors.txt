@@ -1,0 +1,9 @@
+% copy your group.mat into <output_dir>/estimate_group_priors/group folder
+% open Matlab command line right in CBIG folder
+addpath(genpath('/home/pbfs18/Documents/shuqi_code/CBIG'));
+project_dir='/home/pbfs18/Documents/shuqi_code/data_bases/bsc_numbered_output/estimate_group_priors';
+mesh='fsaverage5';
+num_sub='30';
+num_sess='2';
+num_clusters='17';
+Params = CBIG_MSHBM_estimate_group_priors(project_dir, mesh, num_sub, num_sess, num_clusters);
