@@ -43,3 +43,4 @@ stable_projects/**/examples/**/output
 # files inside submodules gpso and deck
 external_packages/matlab/non_default_packages/Gaussian_Process/deck/**
 external_packages/matlab/non_default/packages/Gaussian_Process/gpso/**
+stable_projects/brain_parcellation/Kong2019_MSHBM/bsc_example/.DS_Store
